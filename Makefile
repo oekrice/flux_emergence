@@ -14,6 +14,9 @@ ifeq ($(shell hostname),brillouin.dur.ac.uk)
 	NETCDF = -I /usr/lib64/gfortran/modules
 	NETCDFLIB = -L/usr/lib64/libnetcdff.so.7 -lnetcdff
 	MODULEFLAG = -I/usr/include -I$(OBJDIR) -J$(OBJDIR)
+	FFLAGS += $(MODULEFLAG)
+	LDFLAGS = $(FFLAGS)
+
 else ifeq ($(shell hostname),login1.ham8.dur.ac.uk)
 	archie_flag = false
 	MPIF90 ?= mpif90
@@ -121,8 +124,6 @@ FORCE:
 else
 $(info Compiling locally or on Hamilton)
 
-FFLAGS += $(MODULEFLAG)
-LDFLAGS = $(FFLAGS)
 # Set some of the build parameters
 TARGET = lare3d
 
