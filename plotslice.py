@@ -81,9 +81,10 @@ if len(sys.argv) > 2:
     i = int(sys.argv[2])
 
 #for plot_num in range(0,nsnaps,1):
-for plot_num in range(run, run+1):
+for plot_num in range(run, run+250):
 
     data_directory = '/home/grads/trcn27/rdata/flux_emergence/'
+    data_directory = '/nobackup/trcn27/flux_emergence/'
 
     slice_index = ny//2
     i = plot_num

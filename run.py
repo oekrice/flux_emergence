@@ -71,7 +71,7 @@ energy_init = 1.5e-2
 
 nplots = 100
 ndiags = 100
-tmax = 0.1 #250.0
+tmax = 10.0 #250.0
 
 eta = 1e-6
 
