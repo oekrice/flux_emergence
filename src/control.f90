@@ -90,7 +90,7 @@ CONTAINS
     CLOSE(1)
 
     !data_directory = '/home/grads/trcn27/rdata/flux_emergence/'
-    data_directory = '/nobackup/trcn27/rdata/flux_emergence/'
+    data_directory = '/nobackup/trcn27/flux_emergence/'
 
 
     run_id = int(vars(1))
