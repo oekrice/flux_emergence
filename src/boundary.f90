@@ -261,17 +261,17 @@ CONTAINS
     IF (proc_x_min == MPI_PROC_NULL .AND. xbc_min == BC_USER) THEN
       vx(-2:0,:,:) = 0.0_num
       vy(-2:0,:,:) = 0.0_num
-      vz(0,:,:) = vz(1,:,:)
-      vz(-1,:,:) = vz(0,:,:)
-      vz(-2,:,:) = vz(-1,:,:)
+      vz(0,:,:) = 0.0_num
+      vz(-1,:,:) = 0.0_num
+      vz(-2,:,:) = 0.0_num
     END IF
 
     IF (proc_x_max == MPI_PROC_NULL .AND. xbc_max == BC_USER) THEN
       vx(nx:nx+2,:,:) = 0.0_num
       vy(nx:nx+2,:,:) = 0.0_num
-      vz(nx,:,:) = vz(nx-1,:,:)
-      vz(nx+1,:,:) = vz(nx,:,:)
-      vz(nx+2,:,:) = vz(nx+2,:,:)
+      vz(nx,:,:) = 0.0_num
+      vz(nx+1,:,:) = 0.0_num
+      vz(nx+2,:,:) = 0.0_num
     END IF
 
     IF (proc_y_min == MPI_PROC_NULL .AND. ybc_min == BC_USER) THEN
@@ -285,9 +285,9 @@ CONTAINS
     IF (proc_y_max == MPI_PROC_NULL .AND. ybc_max == BC_USER) THEN
       vx(:,ny:ny+2,:) = 0.0_num
       vy(:,ny:ny+2,:) = 0.0_num
-      vz(:,ny,:) = vz(:,ny-1,:)
-      vz(:,ny+1,:) = vz(:,ny,:)
-      vz(:,ny+2,:) = vz(:,ny+1,:)
+      vz(:,ny,:) = 0.0_num
+      vz(:,ny+1,:) = 0.0_num
+      vz(:,ny+2,:) = 0.0_num
     END IF
 
 
@@ -305,10 +305,10 @@ CONTAINS
     END IF
 
     IF (proc_z_min == MPI_PROC_NULL .AND. zbc_min == BC_USER) THEN
-      vx(:,:,-1) = vx(:,:,0)
-      vx(:,:,-2) = vx(:,:,-1)
-      vy(:,:,-1) = vy(:,:,0)
-      vy(:,:,-2) = vy(:,:,-1)
+      vx(:,:,-1) = 0.0_num
+      vx(:,:,-2) = 0.0_num
+      vy(:,:,-1) = 0.0_num
+      vy(:,:,-2) = 0.0_num
       vz(:,:,-2:0) = 0.0_num
     END IF
 
@@ -328,33 +328,33 @@ CONTAINS
     IF (proc_x_min == MPI_PROC_NULL .AND. xbc_min == BC_USER) THEN
       vx1(-2:0,:,:) = 0.0_num
       vy1(-2:0,:,:) = 0.0_num
-      vz1(0,:,:) = vz1(1,:,:)
-      vz1(-1,:,:) = vz1(0,:,:)
-      vz1(-2,:,:) = vz1(-1,:,:)
+      vz1(0,:,:) = 0.0_num
+      vz1(-1,:,:) = 0.0_num
+      vz1(-2,:,:) = 0.0_num
     END IF
 
     IF (proc_x_max == MPI_PROC_NULL .AND. xbc_max == BC_USER) THEN
       vx1(nx:nx+2,:,:) = 0.0_num
       vy1(nx:nx+2,:,:) = 0.0_num
-      vz1(nx,:,:) = vz1(nx-1,:,:)
-      vz1(nx+1,:,:) = vz1(nx,:,:)
-      vz1(nx+2,:,:) = vz1(nx+2,:,:)
+      vz1(nx,:,:) = 0.0_num
+      vz1(nx+1,:,:) = 0.0_num
+      vz1(nx+2,:,:) = 0.0_num
     END IF
 
     IF (proc_y_min == MPI_PROC_NULL .AND. ybc_min == BC_USER) THEN
       vx1(:,-2:0,:) = 0.0_num
       vy1(:,-2:0,:) = 0.0_num
-      vz1(:,0,:) = vz1(:,1,:)
-      vz1(:,-1,:) = vz1(:,0,:)
-      vz1(:,-2,:) = vz1(:,-1,:)
+      vz1(:,0,:) = 0.0_num
+      vz1(:,-1,:) = 0.0_num
+      vz1(:,-2,:) = 0.0_num
     END IF
 
     IF (proc_y_max == MPI_PROC_NULL .AND. ybc_max == BC_USER) THEN
       vx1(:,ny:ny+2,:) = 0.0_num
       vy1(:,ny:ny+2,:) = 0.0_num
-      vz1(:,ny,:) = vz1(:,ny-1,:)
-      vz1(:,ny+1,:) = vz1(:,ny,:)
-      vz1(:,ny+2,:) = vz1(:,ny+1,:)
+      vz1(:,ny,:) = 0.0_num
+      vz1(:,ny+1,:) = 0.0_num
+      vz1(:,ny+2,:) = 0.0_num
     END IF
 
 
@@ -371,10 +371,10 @@ CONTAINS
 
 
     IF (proc_z_min == MPI_PROC_NULL .AND. zbc_min == BC_USER) THEN
-      vx1(:,:,-1) = vx1(:,:,0)
-      vx1(:,:,-2) = vx1(:,:,-1)
-      vy1(:,:,-1) = vy1(:,:,0)
-      vy1(:,:,-2) = vy1(:,:,-1)
+      vx1(:,:,-1) = 0.0_num
+      vx1(:,:,-2) = 0.0_num
+      vy1(:,:,-1) = 0.0_num
+      vy1(:,:,-2) = 0.0_num
       vz1(:,:,-2:0) = 0.0_num
     END IF
 

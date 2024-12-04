@@ -89,9 +89,13 @@ CONTAINS
     READ(1, *) vars
     CLOSE(1)
 
-    !data_directory = '/home/grads/trcn27/rdata/flux_emergence/'
-    data_directory = '/nobackup/trcn27/flux_emergence/'
+    remote_flag = int(vars(17))
 
+    if (remote_flag > 0.5_num) then
+        data_directory = '/nobackup/trcn27/flux_emergence/'
+    else
+        data_directory = '/home/grads/trcn27/rdata/flux_emergence/'
+    end if
 
     run_id = int(vars(1))
     ! Set the number of gridpoints in x and y directions
@@ -251,6 +255,7 @@ CONTAINS
     snap_num = 0
 
     if (rank == 0) then
+      print*, 'Data directory: ', data_directory
       print*, 'Resolutions', nx_global, ny_global, nz_global
       print*, 'Ranges', x_min, x_max, y_min, y_max, z_min, z_max
       print*, 'Noutputs', nplots, ndiags
