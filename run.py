@@ -59,8 +59,8 @@ nx = 64
 ny = 64
 nz = 64
 
-x0 = -130.; x1 = 130.
-y0 = -130.; y1 = 130.
+x0 = -130.; x1 = 130.0
+y0 = -130.; y1 = 130.0
 z0 = -25.0; z1 = 100.0
 
 shearfact = 0.0
@@ -71,13 +71,13 @@ energy_init = 1.5e-2
 
 nplots = 100
 ndiags = 100
-tmax = 1.0 #250.0
+tmax = 0.1 #250.0
 
 eta = 1e-6
 
 nu0_decay = 0.0
 
-energy_factor = 0.0
+energy_factor = 0.1
 zstar = 24.0/50.0
 chromosphere_temp = 1.0/150.0
 

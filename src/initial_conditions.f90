@@ -93,7 +93,7 @@ CONTAINS
     ENDDO
 
     energy = energy/(gamma-1.0_num)
-    energy_reference = energy
+    energy_reference = energy  !Initial energy for the correction term. Worth faffing with...
 
     ALLOCATE(init_pressure(-1:nz+2))
 
@@ -101,9 +101,6 @@ CONTAINS
     init_pressure(nz+2) = p0
 
     rho = (1.0_num - (base-photo)*delta*(gamma-1.0_num)/gamma)**((gamma*(1.0_num-delta)+delta)/(delta*(gamma-1.0_num)))
-
-    print*, 'rho', maxval(rho), minval(rho)
-    print*, maxval(energy), minval(energy)
 
     IF (proc_z_min .ne. MPI_PROC_NULL) THEN
       CALL MPI_RECV(rho(:,:,-1),(nx+4)*(ny+4),mpireal,proc_z_min,tag,comm,status,errcode)
@@ -135,9 +132,8 @@ CONTAINS
     density_init = rho(0,0,1)  !Switch to bottom reference
 
     if (rank == 0) then
-      print*, 'energy init', energy_init
-      print*, 'energy', maxval(energy), minval(energy)
-      print*, 'density', maxval(rho), minval(rho)
+      print*, 'energy range', maxval(energy), minval(energy)
+      print*, 'density range', maxval(rho), minval(rho)
     end if
     ! set background, non-shock, viscosity
 

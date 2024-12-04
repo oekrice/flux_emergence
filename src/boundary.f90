@@ -39,8 +39,6 @@ CONTAINS
 
   END SUBROUTINE set_boundary_conditions
 
-
-
   !****************************************************************************
   ! Call all of the boundaries needed by the core Lagrangian solver
   !****************************************************************************
@@ -53,8 +51,6 @@ CONTAINS
     CALL velocity_bcs
 
   END SUBROUTINE boundary_conditions
-
-
 
   !****************************************************************************
   ! Boundary conditions for magnetic field through plane

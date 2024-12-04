@@ -96,7 +96,7 @@ PROGRAM lare3d
     CALL eulerian_remap(step)        ! remap.f90
     IF (rke) CALL energy_correction  ! diagnostics.f90
 
-    energy = energy +  correction_factor*dt*(energy_reference-energy)  !Energy correction factor for the Newton Cooling
+    energy = energy + correction_factor*dt*(energy_reference-energy)  !Energy correction factor for the Newton Cooling
 
     CALL eta_calc                    ! lagran.f90
   END DO
