@@ -37,7 +37,7 @@ else:
 if not hamilton_flag:
     data_directory = '/home/grads/trcn27/rdata/flux_emergence/'
 else:
-    data_directory = './Data/'
+    data_directory = '/nobackup/trcn27/rdata/flux_emergence/'
 
 if os.path.isdir(data_directory):
     for i in range(1000):

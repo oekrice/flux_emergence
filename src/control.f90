@@ -89,7 +89,9 @@ CONTAINS
     READ(1, *) vars
     CLOSE(1)
 
-    data_directory = '/home/grads/trcn27/rdata/flux_emergence/'
+    !data_directory = '/home/grads/trcn27/rdata/flux_emergence/'
+    data_directory = '/nobackup/trcn27/rdata/flux_emergence/'
+
 
     run_id = int(vars(1))
     ! Set the number of gridpoints in x and y directions
